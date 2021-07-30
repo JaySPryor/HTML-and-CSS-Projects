@@ -2,20 +2,50 @@
 STYLES FOR ONE PAGE WEBSITE
 */
 
+/*Navbar*/
 ul {
     font-family: sans-serif;
 }
 
 body {
     font-family: fantasy;
-    background-size: 100%;
+    background-size: cover;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/*All elements*/
+* {
+    box-sizing: border-box;
+}
+
+/*General text formatting */
 p {
     font-size: medium;
+    text-align: center;
 }
 
+/*Center title*/
+h1 {
+    text-align: center;
+}
+
+/* New */
+h2 {
+    text-align: center;
+}
+
+/* NEW */
+img {
+    width: 100%;
+    margin-bottom: -4;
+    border: rgb(97, 97, 97);
+    border-radius: 10px;
+}
+
+/*Sign up form*/
 .sign-up input[type="text"] {
     font-size: 15px;
     outline: none;
@@ -27,9 +57,141 @@ p {
     border-right: 2px solid #424549;
     border-bottom: 2px solid #424549;
     border-left: 1px solid #09080d;
-    margin: 7px 25em;
+    margin: auto;
     border-radius: 4px;
     background: #ffffff;
     box-shadow: inset 0px 3px 0px 0px rgba(5,5,5,.15);
     font-family: sans-serif;
 }
+
+/**** *NEW* GALLERY SECTION *****/
+
+.row > .column {
+    padding: 0 8px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: right;
+    width: 25%;
+}
+
+/*Time for hover shadow to transition*/
+img.hover-shadow {
+    transition: 0.3s;
+}
+
+/*Thumbnail img hover effect (shadow) */
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*Sets cursor to pointer on certain elements. */
+.cursor {
+    cursor: pointer;
+}
+
+/* Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+}
+
+/* Modal content */
+.modal-content {
+    position: relative;
+    background-color: #ffffff71;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Close button */
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mySlides {
+    display: none;
+}
+
+/* Number text (1/6) */
+.numberText {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Next/Prev buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: rgba(255, 255, 255, 0.808);
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position next button to right. */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Adds background on hover. */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.664);
+}
+
+/* Caption Container */
+.caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+}
+ 
+/* While inactive, Lightbox thumbnails are less opaque.*/
+.demo {
+    opacity: 0.6;
+}
+
+/* While active/hovered over, Lightbox thumbnails are completely opaque.*/
+.active, .demo:hover {
+    opacity: 1;
+}
+

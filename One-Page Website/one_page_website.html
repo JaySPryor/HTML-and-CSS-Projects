@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<title>Machu Picchu</title>
 	<link rel="stylesheet" href="./CSS/one_page_website.css">
+	<script src="./JS/one_page_website.js" defer></script>
+	<!--Navbar-->
 	<ul>
 		<a href="#home" id="link"><lr>HOME</a>|
 		<a href="#gallery">GALLERY</a>|
@@ -11,15 +13,15 @@
 	</ul>
 </head>
 <body background="./images/background_1.jpg">
-	<center>
+	<div id="title">
 		<h1 id="top">
 			Machu Picchu
 		</h1>
 		<p>
 			<em>A 15th-century Inca citadel!</em>
 		</p>
-	</center>
-	<div align="center">
+	</div>
+	<div id="intro">
 		<article>
 			<h2>"Machu Pikchu"</h2>
 			<p>
@@ -31,7 +33,7 @@
 	</div>
 
 <!--Video-->
-	<div align="center">
+	<div id="video" align="center">
 		<iframe 
 		width="853" 
 		height="480" 
@@ -45,97 +47,142 @@
 <!--End Video-->
 
 <!--Gallery-->
-	<section>
-		<div id="gallery">
-			
-			<h2 align="center" style="background-color: palegoldenrod;">Gallery</h2>
-			<div>
-				<!--Photo Container 1-->
-				<div>
-					<div>
-						<div align="center" style="background-color: darkgoldenrod;">
-							<h3>Quite the hike!</h3>
-							<p>There once was a time when the only way to get to Machu Picchu was by hiking the "Inca Trail". <br>
-							The world famous trek is 26 miles from start to finish and takes 4 days to complete. <br>
-							Now tourists can catch a short bus ride up the the site from the nearby town, Aguas Calientes.</p>
-						</div>
-						<img src="./images/thumbnail_1.jpg" alt="Hiking">
-					</div>
-				</div>
-				<!--End Photo Container -->
+	<h2>Gallery</h2>
+	<!--Thumbnails on page-->
+	<div class="row">
+		<div class="column">
+			<img src="./images/thumbnail_1.jpg" onclick="openModal(); currentSlide(1)" class="hover-shadow cursor">
+		</div>
+		<div class="column">
+			<img src="./images/thumbnail_2.jpg" onclick="openModal(); currentSlide(2)" class="hover-shadow cursor">
+		</div>
+		<div class="column">
+			<img src="./images/thumbnail_3.jpg" onclick="openModal(); currentSlide(3)" class="hover-shadow cursor">
+		</div>
+		<div class="column">
+			<img src="./images/thumbnail_4.jpg" onclick="openModal(); currentSlide(4)" class="hover-shadow cursor">
+		</div>
+		<div class="column">
+			<img src="./images/thumbnail_5.jpg" onclick="openModal(); currentSlide(5)" class="hover-shadow cursor">
+		</div>
+		<div class="column">
+			<img src="./images/thumbnail_6.jpg" onclick="openModal(); currentSlide(6)" class="hover-shadow cursor">
+		</div>
+	</div>
+	<!--Lightbox-->
+	<div id="myModal" class="modal">
+		<span class="close cursor" onclick="closeModal()">&times;</span>
+		<div class="modal-content">
 
-				<!--Photo Container 2-->
-				<div>
-					<div>				
-						<div align="center" style="background-color: darkgoldenrod;">
-							<h3>Llamas of Machu Picchu</h3>
-							<p>The llamas are perhaps the most beloved mammals of the Andes; The llamas live in the mountain regions of Chile, Argentina, Bolivia and Peru, <br>
-							where they contributed greatly in the development of the vast Inca Empire. <br>
-							Nowadays they captivate the curiosity of the people who visit the Inca City of Machu Picchu.</p>
-						</div>
-						<img src="./images/thumbnail_2.jpg" alt="Llamas">
-					</div>
-				</div>
-				<!--End Photo Container -->
+			<!--Full size images in Lightbox-->
+			<div class="mySlides">
+				<div class="numbertext">1 / 6</div>
+				<img src="./images/thumbnail_1.jpg">
+			</div>
 
-				<!--Photo Container  3-->
-				<div>
-					<div>
-						<div align="center" style="background-color: darkgoldenrod;">
-							<h3>What a view!</h3>
-							<p>The ancient site is located in the Eastern Cordillera of southern Peru, on a 7,970 ft mountain ridge. <br>
-							This makes for some truly breathtaking panoramas.</p>
-						</div>
-						<img src="./images/thumbnail_3.jpg" alt="Views">
-					</div>
-				</div>
-				<!--End Photo Container -->
+			<div class="mySlides">
+				<div class="numbertext">2 / 6</div>
+				<img src="./images/thumbnail_2.jpg">
+			</div>
 
-				<!--Photo Container 4-->
-				<div>
-					<div>						
-						<div align="center" style="background-color: darkgoldenrod;">
-							<h3>Inca Masonry</h3>
-							<p>Machu Picchu was built around 1450 AD using simple tools. Roughly 200 structures survived throughout the ruins. <br>
-							Fortunatley the decay stopped at the perfectly cut granite stones, <br>
-							which remain impeccable and showcase the unbelievable skill of the Inca masons.</p>
-						</div>
-						<img src="./images/thumbnail_4.jpg" alt="Masonry">
-					</div>
-				</div>
-				<!--End Photo Container -->
+			<div class="mySlides">
+				<div class="numbertext">3 / 6</div>
+				<img src="./images/thumbnail_3.jpg">
+			</div>
 
-				<!--Photo Container 5-->
-				<div>
-					<div>						
-						<div align="center" style="background-color: darkgoldenrod;">
-							<h3>Astronomy Mirrors</h3>
-							<p>Located below the Sun Temple in Machu Picchu are two shallow basins used by the Inca to observe the stars. <br>
-							Just like the Mayans, the Incas were keen observers of the sky. <br>
-							They filled the basisns with water to mirror and observe the images of the stars.</p>
-						</div>
-						<img src="./images/thumbnail_5.jpg" alt="Mirrors">
-					</div>
-				</div>
-				<!--End Photo Container -->
+			<div class="mySlides">
+				<div class="numbertext">4 / 6</div>
+				<img src="./images/thumbnail_4.jpg">
+			</div>
 
-				<!--Photo Container 6-->
-				<div>
-					<div>
-						<div align="center" style="background-color: darkgoldenrod;">
-							<h3>Huayna Picchu</h3>
-							<p>
-								Wayna Pikchu, in Quechua, is a mountain in Peru which the Urubamba River bends. <br>
-								It is located in the Cusco Region, Urubamba Province, Machupicchu District. <br>
-								It rises over Machu Picchu, the so-called lost city of the Incas. <br>
-								The Incas built a trail up the side of the Huayna Picchu and built temples and terraces on its top. <br>
-								The peak of Huayna Picchu is 8,835 ft above sea level, or about 850 ft higher than Machu Picchu.
-							</p>
-						</div>
-						<img src="./images/thumbnail_6.jpg" alt="Sabina">
-					</div>
-				</div>
-				<!--End Photo Container -->
+			<div class="mySlides">
+				<div class="numbertext">5 / 6</div>
+				<img src="./images/thumbnail_5.jpg">
+			</div>
+
+			<div class="mySlides">
+				<div class="numbertext">6 / 6</div>
+				<img src="./images/thumbnail_6.jpg">
+			</div>
+			<!--prev / next buttons-->
+			<div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+			<div class="next" onclick="plusSlides(1)">&#10095;</div>
+
+			<div class="caption-container">
+				<p id="caption"></p>
+			</div>
+
+			<!--Thumbnails in Lightbox-->
+			<div class="column">
+				<img class="demo cursor" src="./images/thumbnail_1.jpg" onclick="currentSlide(1)" 
+				alt="
+				<h2>Inca Trail</h2>
+				<p>
+					There once was a time when the only way to get to Machu Picchu was by hiking the <i>Inca Trail</i>. <br>
+					The world famous trek is 26 miles from start to finish and takes 4 days to complete. <br>
+					Now tourists can catch a short bus ride up to the site from the nearby town, Aguas Calientes.
+				</p>
+				">
+			</div>
+			<div class="column">
+				<img class="demo cursor" src="./images/thumbnail_2.jpg" onclick="currentSlide(2)" 
+				alt="
+				<h2>Llamas</h2>
+				<p>
+					The llamas are perhaps the most beloved mammals of the Andes; <br>
+					The llamas live in the mountain regions of Chile, Argentina, Bolivia and Peru, <br>
+					where they contributed greatly in the development of the vast Inca Empire. <br>
+					Nowadays they captivate the curiosity of the people who visit the Inca City of Machu Picchu.
+				</p>
+				">
+			</div>
+			<div class="column">
+				<img class="demo cursor" src="./images/thumbnail_3.jpg" onclick="currentSlide(3)" 
+				alt="
+				<h2>View</h2>
+				<p>
+					The ancient site is located in the Eastern Cordillera of southern Peru, on a 7,970 ft mountain ridge. <br>
+					This makes for some truly breathtaking panoramas.
+				</p>
+				">
+			</div>
+			<div class="column">
+				<img class="demo cursor" src="./images/thumbnail_4.jpg" onclick="currentSlide(4)" 
+				alt="
+				<h2>Inca Masonry</h2>
+				<p>
+					Machu Picchu was built around 1450 AD using simple tools. Roughly 200 structures survived throughout the ruins. <br>
+					Fortunatley the decay stopped at the perfectly cut granite stones, <br>
+					which remain impeccable and showcase the unbelievable skill of the Inca masons.
+				</p>
+				">
+			</div>
+			<div class="column">
+				<img class="demo cursor" src="./images/thumbnail_5.jpg" onclick="currentSlide(5)" 
+				alt="
+				<h2>Mirrors</h2>
+				<p>
+					Located below the Sun Temple in Machu Picchu are two shallow basins used by the Inca to observe the stars. <br>
+					Just like the Mayans, the Incas were keen observers of the sky. <br>
+					They filled the basisns with water to mirror and observe the images of the stars.
+				</p>
+				">
+			</div>
+			<div class="column">
+				<img class="demo cursor" src="./images/thumbnail_6.jpg" onclick="currentSlide(6)" 
+				alt="
+				<h2>Huayna Picchu</h2>
+				<p>
+					Wayna Pikchu, in Quechua, is a mountain in Peru which the Urubamba River bends. <br>
+					It is located in the Cusco Region, Urubamba Province, Machupicchu District. <br>
+					It rises over Machu Picchu, the so-called lost city of the Incas. <br>
+					The Incas built a trail up the side of the Huayna Picchu and built temples and terraces on its top. <br>
+					The peak of Huayna Picchu is 8,835 ft above sea level, or about 850 ft higher than Machu Picchu.
+				</p>
+				">
+			</div>
+		</div>
+	</div>
 <!--End Gallery-->
 
 <!--RSVP-->
